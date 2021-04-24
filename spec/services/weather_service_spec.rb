@@ -34,6 +34,7 @@ RSpec.describe 'Geocoding Service' do
         expect(service[:current][:weather].first).to have_key(:icon)
         expect(service[:current][:weather].first[:icon]).to be_a(String)
 
+        #relevant info for the current weather info
         expect(service).to have_key(:daily)
         expect(service[:daily]).to be_a(Array)
         expect(service[:daily].count).to eq(8)
@@ -59,9 +60,26 @@ RSpec.describe 'Geocoding Service' do
           expect(day[:weather].first).to have_key(:icon)
           expect(day[:weather].first[:icon]).to be_a(String)
         end
+
+        #relevant info for the hourly weather info
+        expect(service).to have_key(:daily)
+        expect(service[:hourly]).to be_a(Array)
+        expect(service[:hourly].count).to eq(48)
+
+        service[:hourly].each do |hour|
+          expect(hour).to have_key(:dt)
+          expect(hour[:dt]).to be_a(Integer)
+          expect(hour).to have_key(:temp)
+          expect(hour[:temp]).to  be_a_kind_of(Numeric)
+          expect(hour).to have_key(:weather)
+          expect(hour[:weather]).to be_a(Array)
+          expect(hour[:weather].first).to be_a(Hash)
+          expect(hour[:weather].first).to have_key(:description)
+          expect(hour[:weather].first[:description]).to be_a(String)
+          expect(hour[:weather].first).to have_key(:icon)
+          expect(hour[:weather].first[:icon]).to be_a(String)
+        end
       end
     end
-
-
   end
 end
