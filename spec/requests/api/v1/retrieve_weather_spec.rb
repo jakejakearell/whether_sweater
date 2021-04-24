@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "Retrieve weather for a city" do
   describe 'Happy Paths' do
-    it "retrieves weather info with valid location" do
+    xit "retrieves weather info with valid location" do
       get '/api/v1/forecast?location=denver,co'
 
       weather = JSON.parse(response.body, symbolize_names: true)
