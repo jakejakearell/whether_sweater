@@ -1,5 +1,5 @@
 class PhotoService
-  
+
   def self.photo_location_lat_lon_search(location)
     location = GeocodingFacade.latitude_longitude(location)
     response = conn.get("/services/rest") do |request|
