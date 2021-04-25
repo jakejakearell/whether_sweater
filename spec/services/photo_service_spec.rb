@@ -1,8 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe 'Geocoding Service' do
+RSpec.describe 'Photo Service' do
   describe 'Happy Paths' do
-
     it 'will connect to the photo service search' do
       VCR.use_cassette('photo_service_search_test') do
         service = PhotoService.photo_location_lat_lon_search("denver,co")
@@ -13,7 +12,6 @@ RSpec.describe 'Geocoding Service' do
         expect(service[:photos][:photo]).to be_a(Array)
         expect(service[:photos][:photo].first).to have_key(:id)
         expect(service[:photos][:photo].first[:id]).to be_a(String)
-
       end
     end
 
@@ -31,8 +29,8 @@ RSpec.describe 'Geocoding Service' do
         expect(service[:photo][:owner]).to have_key(:username)
         expect(service[:photo][:owner][:username]).to be_a(String)
         expect(service[:photo]).to have_key(:owner)
-        expect(service[:photo][:owner]).to have_key(:path_alias)
-        expect(service[:photo][:owner][:path_alias]).to be_a(String)
+        expect(service[:photo][:owner]).to have_key(:nsid)
+        expect(service[:photo][:owner][:nsid]).to be_a(String)
         expect(service[:photo]).to have_key(:title)
         expect(service[:photo][:title]).to have_key(:_content)
         expect(service[:photo][:title][:_content]).to be_a(String)
