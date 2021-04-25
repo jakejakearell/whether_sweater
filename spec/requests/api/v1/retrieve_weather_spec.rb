@@ -76,8 +76,15 @@ describe "Retrieve weather for a city" do
   end
 
   describe 'Sad Paths' do
-    it "gives error when an invalid location is used" do
+    it "gives error when an empty location is used" do
+      VCR.use_cassette('forecast_endpoint_sad_path') do
+        get '/api/v1/forecast?location='
 
+        weather = JSON.parse(response.body, symbolize_names: true)
+
+        expect(weather[:status]).to eq(404)
+        expect(weather[:error]).to eq("Must Enter a location")
+      end
     end
   end
 end

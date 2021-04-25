@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: http://www.mapquestapi.com/geocoding/v1/address?key=Geocode key&location=1234,asd%20afd%20dsdfas%20%7B%7D%7D%5D%5B%5B%5B%5B%5B!!!!%5D%5D%5D%5D%5D
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Sun, 25 Apr 2021 17:40:12 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1039'
+      Access-Control-Allow-Methods:
+      - OPTIONS,GET,POST
+      Access-Control-Allow-Origin:
+      - "*"
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Geocodetransactioncount:
+      - '1'
+      Last-Modified:
+      - Sun, 25 Apr 2021 17:40:12 GMT
+      Pragma:
+      - no-cache
+      Reversegeocodetransactioncount:
+      - '0'
+      Server:
+      - Apache-Coyote/1.1
+      Set-Cookie:
+      - JSESSIONID=D674F72876E6740EA82351DD0A91AFB0; Path=/; HttpOnly
+      Status:
+      - success
+      Transactionweight:
+      - '1.0'
+    body:
+      encoding: UTF-8
+      string: '{"info":{"statuscode":0,"copyright":{"text":"\u00A9 2021 MapQuest,
+        Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
+        2021 MapQuest, Inc."},"messages":[]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":"1234,asd
+        afd dsdfas {}}][[[[[!!!!]]]]]"},"locations":[{"street":"","adminArea6":"","adminArea6Type":"Neighborhood","adminArea5":"","adminArea5Type":"City","adminArea4":"","adminArea4Type":"County","adminArea3":"","adminArea3Type":"State","adminArea1":"US","adminArea1Type":"Country","postalCode":"","geocodeQualityCode":"A1XAX","geocodeQuality":"COUNTRY","dragPoint":false,"sideOfStreet":"N","linkId":"282934758","unknownInput":"","type":"s","latLng":{"lat":39.390897,"lng":-99.066067},"displayLatLng":{"lat":39.390897,"lng":-99.066067},"mapUrl":"http://www.mapquestapi.com/staticmap/v5/map?key=Geocode
+        key&type=map&size=225,160&locations=39.390897,-99.066067|marker-sm-50318A-1&scalebar=true&zoom=2&rand=1798617055"}]}]}'
+  recorded_at: Sun, 25 Apr 2021 17:40:12 GMT
+recorded_with: VCR 6.0.0
