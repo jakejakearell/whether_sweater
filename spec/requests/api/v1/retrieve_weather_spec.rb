@@ -7,7 +7,7 @@ describe "Retrieve weather for a city" do
         get '/api/v1/forecast?location=denver,co'
 
         weather = JSON.parse(response.body, symbolize_names: true)
-        require "pry"; binding.pry
+
         expect(response).to be_successful
 
         expect(weather).to be_a(Hash)
