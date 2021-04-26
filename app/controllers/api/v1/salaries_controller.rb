@@ -2,7 +2,8 @@ class Api::V1::SalariesController < ApplicationController
 
   def index
     test = json_parser(salaries.body)
-    format_salaries_information
+    test1 = format_salaries_information
+    test3 = weather_info
     require "pry"; binding.pry
   end
 
@@ -48,5 +49,13 @@ class Api::V1::SalariesController < ApplicationController
       memo << info
       memo
     end
+  end
+
+  def weather_info
+    WeatherFacade.new(destination).current_weather_salaries
+  end
+
+  def salaries_object
+    Salaries.new(destination, format_salaries_information, weather_info)
   end
 end

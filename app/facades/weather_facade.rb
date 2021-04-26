@@ -21,6 +21,13 @@ class WeatherFacade
     }
   end
 
+  def current_weather_salaries
+    {
+     :temperature => "#{@current_weather[:temp]} F",
+     :summary => @current_weather[:weather].first[:description],
+    }
+  end
+
   def daily_weather_attribute
     @daily_weather[0..4].map do |day|
       {
