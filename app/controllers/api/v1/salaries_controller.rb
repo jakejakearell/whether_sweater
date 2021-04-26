@@ -2,7 +2,7 @@ class Api::V1::SalariesController < ApplicationController
 
   def index
     test = json_parser(salaries.body)
-    parse_salaries_api_call
+    format_salaries_information
     require "pry"; binding.pry
   end
 
@@ -25,12 +25,28 @@ class Api::V1::SalariesController < ApplicationController
   end
 
   def parse_salaries_api_call
-    json_parser(salaries.body)[:salaries].each do |salary|
-      require "pry"; binding.pry
+    collection = []
+    json_parser(salaries.body)[:salaries].map do |salary|
+      if targeted_jobs.include?(salary[:job][:title])
+        collection << salary
+      end
     end
+    collection
   end
 
   def targeted_jobs
     ["Data Analyst","Data Scientist","Mobile Developer","QA Engineer","Software Engineer","Systems Administrator","Web Developer"]
-  end 
+  end
+
+  def format_salaries_information
+    parse_salaries_api_call.reduce([]) do |memo, salary|
+      info = {
+        title: salary[:job][:title],
+        min: salary[:salary_percentiles][:percentile_25],
+        max: salary[:salary_percentiles][:percentile_75]
+      }
+      memo << info
+      memo
+    end
+  end
 end
