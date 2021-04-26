@@ -42,5 +42,22 @@ describe "Salaries Facade" do
         expect(salary[:max]).to be_a(String)
       end
     end
+
+    it "format can get the temp for a destination" do
+      weather = @salary_facade.weather_info
+
+      expect(weather).to be_a(Hash)
+      expect(weather.count).to eq(2)
+      expect(weather).to have_key(:temperature)
+      expect(weather[:temperature]).to be_a(String)
+      expect(weather).to have_key(:summary)
+      expect(weather[:summary]).to be_a(String)
+    end
+
+    it "can create a Salaries object" do
+      object = @salary_facade.salaries_object
+
+      expect(object).to be_a(Salaries)
+    end
   end
 end

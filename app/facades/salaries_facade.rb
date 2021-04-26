@@ -6,7 +6,7 @@ class SalariesFacade
   def initialize(destination)
     @service_call = SalariesService.salaries(destination)
     @targeted_jobs = ["Data Analyst","Data Scientist","Mobile Developer","QA Engineer","Software Engineer","Systems Administrator","Web Developer"]
-    @destination = @destination
+    @destination = destination
   end
 
   def format_salaries_information
