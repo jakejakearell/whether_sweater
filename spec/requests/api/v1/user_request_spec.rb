@@ -40,15 +40,17 @@ describe "User Creation" do
   describe 'Sad Paths' do
     it "will give a descriptive error if passwords don't match" do
       body = {
-                 email: 'jake@ihopethiswork.org',
-                 password: 'h1tech',
-                 password_confitmation: 'hItech'
+                email: 'jake@ihopethiswork.org',
+                password: 'h1tech',
+                password_confitmation: 'hItech'
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-
       post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      expect(response.status).to eq(404)
 
+      user_json = JSON.parse(response.body, symbolize_names: true)
+      expect(user_json[:error]).to eq("Passwords must match")
     end
 
     it "will give a descriptive error if password missing" do
@@ -59,9 +61,11 @@ describe "User Creation" do
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-
       post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      expect(response.status).to eq(404)
 
+      user_json = JSON.parse(response.body, symbolize_names: true)
+      expect(user_json[:error]).to eq("Password can't be blank")
     end
 
     it "will give a descriptive error if email missing" do
@@ -72,9 +76,11 @@ describe "User Creation" do
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-
       post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      expect(response.status).to eq(404)
 
+      user_json = JSON.parse(response.body, symbolize_names: true)
+      expect(user_json[:error]).to eq("Email can't be blank")
     end
 
     it "will give a descriptive error if email taken" do
@@ -88,9 +94,11 @@ describe "User Creation" do
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-
       post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      expect(response.status).to eq(404)
 
+      user_json = JSON.parse(response.body, symbolize_names: true)
+      expect(user_json[:error]).to eq("Email has already been taken")
     end
   end
 end
