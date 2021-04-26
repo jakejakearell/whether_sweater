@@ -1,10 +1,7 @@
 class Api::V1::SalariesController < ApplicationController
 
   def index
-    test = json_parser(salaries.body)
-    test1 = format_salaries_information
-    test3 = weather_info
-    require "pry"; binding.pry
+    render json: SalariesSerializer.new(salaries_object)
   end
 
   private
