@@ -1,7 +1,7 @@
 class PhotoService
 
   def self.photo_location_lat_lon_search(location)
-    location = GeocodingFacade.latitude_longitude(location)
+    location = GeocodingFacade.new(location).latitude_longitude
     response = conn.get("/services/rest") do |request|
       request.params['method'] =  "flickr.photos.search"
       request.params['lat'] = location.latitude
