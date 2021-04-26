@@ -3,7 +3,7 @@ require 'rails_helper'
 describe "User Creation" do
   describe 'Happy Paths' do
     it "can create a user" do
-      user_params = {
+      body = {
                  email: 'jake@ihopethiswork.org',
                  password: 'h1tech',
                  password_confitmation: 'h1tech'
@@ -11,7 +11,8 @@ describe "User Creation" do
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
 
-      post "/api/v1/users", headers: headers, params: JSON.generate(item: user_params)
+      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
@@ -31,7 +32,7 @@ describe "User Creation" do
       expect(user_json[:data][:attributes]).to have_key(:api_key)
       expect(user_json[:data][:attributes][:api_key]).to be_a(String)
       expect(user_json[:data][:attributes]).to have_key(:email)
-      expect(user_json[:data][:attributes][:email]).to eq(user_params[:email])
+      expect(user_json[:data][:attributes][:email]).to eq(body[:email])
       expect(user_json[:data][:attributes][:email]).to be_a(String)
     end
   end

@@ -1,13 +1,15 @@
 class Api::V1::UsersController < ApplicationController
   def create
     user = User.new(user_params)
-    user.save
-    render json:UserSerializer.new(user), status: 201
+    if user.save
+      user.update(:api_key => SecureRandom.hex)
+      render json:UserSerializer.new(user), status: 201
+    end
   end
 
 
   private
   def user_params
-    {email: params["item"]["email"],password: params["item"]["password"], api_key:SecureRandom.hex }
+    params.require(:body).permit(:email, :password)
   end
 end
