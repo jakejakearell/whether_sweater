@@ -47,9 +47,9 @@ describe "Salaries endpoint" do
         expect(salary).to have_key(:title)
         expect(salary[:title]).to be_a(String)
         expect(salary).to have_key(:min)
-        # expect(salary[:min]).to be_a(String)
+        expect(salary[:min]).to be_a(String)
         expect(salary).to have_key(:max)
-        # expect(salary[:max]).to be_a(String)
+        expect(salary[:max]).to be_a(String)
       end
     end
   end

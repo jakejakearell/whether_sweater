@@ -1,4 +1,5 @@
 class Api::V1::SalariesController < ApplicationController
+  include ActionView::Helpers::NumberHelper
 
   def index
     render json: SalariesSerializer.new(salaries_object)
@@ -40,8 +41,8 @@ class Api::V1::SalariesController < ApplicationController
     parse_salaries_api_call.reduce([]) do |memo, salary|
       info = {
         title: salary[:job][:title],
-        min: salary[:salary_percentiles][:percentile_25],
-        max: salary[:salary_percentiles][:percentile_75]
+        min: number_to_currency(salary[:salary_percentiles][:percentile_25]),
+        max: number_to_currency(salary[:salary_percentiles][:percentile_75])
       }
       memo << info
       memo
