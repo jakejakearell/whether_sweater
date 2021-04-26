@@ -36,4 +36,61 @@ describe "User Creation" do
       expect(user_json[:data][:attributes][:email]).to be_a(String)
     end
   end
+
+  describe 'Sad Paths' do
+    it "will give a descriptive error if passwords don't match" do
+      body = {
+                 email: 'jake@ihopethiswork.org',
+                 password: 'h1tech',
+                 password_confitmation: 'hItech'
+               }
+
+      headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
+
+      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+
+    end
+
+    it "will give a descriptive error if password missing" do
+      body = {
+                 email: 'jake@ihopethiswork.org',
+                 password: '',
+                 password_confitmation: ''
+               }
+
+      headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
+
+      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+
+    end
+
+    it "will give a descriptive error if email missing" do
+      body = {
+                 email: '',
+                 password: 'h1tech',
+                 password_confitmation: 'h1tech'
+               }
+
+      headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
+
+      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+
+    end
+
+    it "will give a descriptive error if email taken" do
+      User.create({email: 'jake@ihopethiswork.org',
+         password: 'h1tech'})
+
+      body = {
+                 email: 'jake@ihopethiswork.org',
+                 password: 'h1tech',
+                 password_confitmation: 'h1tech'
+               }
+
+      headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
+
+      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+
+    end
+  end
 end
