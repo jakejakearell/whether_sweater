@@ -1,6 +1,8 @@
 class SalariesFacade
   include ActionView::Helpers::NumberHelper
 
+  attr_reader :targeted_jobs
+
   def initialize(destination)
     @service_call = SalariesService.salaries(destination)
     @targeted_jobs = ["Data Analyst","Data Scientist","Mobile Developer","QA Engineer","Software Engineer","Systems Administrator","Web Developer"]

@@ -9,7 +9,38 @@ describe "Salaries Facade" do
     it "will collect only the targeted jobs" do
       expect(@salary_facade.targeted_jobs.count).to eq(7)
       expect(@salary_facade.parse_salaries_api_call.count).to eq(7)
+      expect(@salary_facade.parse_salaries_api_call).to be_a(Array)
 
+      @salary_facade.parse_salaries_api_call.each do |salary|
+        expect(salary).to be_a(Hash)
+        expect(salary.count).to eq(2)
+        expect(salary).to have_key(:job)
+        expect(salary[:job]).to be_a(Hash)
+        expect(salary[:job]).to have_key(:title)
+        expect(salary[:job][:title]).to be_a(String)
+        expect(salary).to have_key(:salary_percentiles)
+        expect(salary[:salary_percentiles]).to have_key(:percentile_25)
+        expect(salary[:salary_percentiles][:percentile_25]).to be_a(Float)
+        expect(salary[:salary_percentiles]).to have_key(:percentile_75)
+        expect(salary[:salary_percentiles][:percentile_75]).to be_a(Float)
+      end
+    end
+
+    it "format down the salaries further" do
+      expect(@salary_facade.targeted_jobs.count).to eq(7)
+      expect(@salary_facade.format_salaries_information.count).to eq(7)
+      expect(@salary_facade.format_salaries_information).to be_a(Array)
+
+      @salary_facade.format_salaries_information.each do |salary|
+        expect(salary).to be_a(Hash)
+        expect(salary.count).to eq(3)
+        expect(salary).to have_key(:title)
+        expect(salary[:title]).to be_a(String)
+        expect(salary).to have_key(:min)
+        expect(salary[:min]).to be_a(String)
+        expect(salary).to have_key(:max)
+        expect(salary[:max]).to be_a(String)
+      end
     end
   end
 end
