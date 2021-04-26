@@ -6,12 +6,13 @@ class PhotoService
       request.params['method'] =  "flickr.photos.search"
       request.params['lat'] = location.latitude
       request.params['lon'] = location.longitude
+      request.params['accuracy'] = 11
       request.params['geo_context'] =  2
     end
     PhotoService.parser(response.body)
   end
 
-  def self.photo_lookup(id="6066076873")
+  def self.photo_lookup(id)
     response = conn.get("/services/rest") do |request|
       request.params['method'] =  "flickr.photos.getInfo"
       request.params['photo_id'] =  id
