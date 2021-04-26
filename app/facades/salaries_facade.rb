@@ -1,6 +1,5 @@
 class SalariesFacade
   include ActionView::Helpers::NumberHelper
-
   attr_reader :targeted_jobs
 
   def initialize(destination)
