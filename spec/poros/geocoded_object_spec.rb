@@ -4,9 +4,7 @@ RSpec.describe GeocodedObject do
   describe 'happy path' do
     it 'has attributes of latitude, longitude and is a GeocodedObject object' do
       VCR.use_cassette("geocode_poro") do
-        data = GeocodingService.address_cordinates("Mead,CO")
-
-        result = GeocodedObject.new(data)
+        result = GeocodingFacade.new("Mead,CO").latitude_longitude
 
         expect(result).to be_a(GeocodedObject)
         expect(result.latitude).to eq(40.237428)

@@ -4,8 +4,22 @@ describe "Geocoding Facade" do
   describe 'Happy Paths' do
     it "will return a poro with latitude and longitude" do
 
+      VCR.use_cassette("geocoding_facade_denver_parsed") do
+        result = GeocodingFacade.new("Denver,CO").parse_service_call
+
+        expect(result).to be_a(Hash)
+        expect(result.count).to eq(2)
+        expect(result).to have_key(:latitude)
+        expect(result[:latitude]).to eq(39.738453)
+        expect(result).to have_key(:longitude)
+        expect(result[:longitude]).to eq((-104.984853))
+      end
+    end
+
+    it "will return a poro with latitude and longitude" do
+
       VCR.use_cassette("geocoding_facade_denver") do
-        result = GeocodingFacade.latitude_longitude("Denver,CO")
+        result = GeocodingFacade.new("Denver,CO").latitude_longitude
         expect(result).to be_a(GeocodedObject)
         expect(result.latitude).to eq(39.738453)
         expect(result.longitude).to eq((-104.984853))
