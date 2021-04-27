@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "User Creation" do
+describe "Roadtrip Endpoint" do
   describe 'Happy Paths' do
     before :each do
       body = {
@@ -13,7 +13,7 @@ describe "User Creation" do
       @user = User.first
     end
 
-    it "can create a user" do
+    it "will return JSON with a proper request create a user" do
       body =  {
                 "origin": "Denver,CO",
                 "destination": "Pueblo,CO",
@@ -22,10 +22,39 @@ describe "User Creation" do
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
 
-      post "/api/v1/road_trip", headers: headers, params: body, as: :json
+      VCR.use_cassette("happy_path_local_trip") do
+        post "/api/v1/road_trip", headers: headers, params: body, as: :json
 
-      expect(response).to be_successful
-      expect(response.status).to eq(204)
+        expect(response).to be_successful
+        expect(response.status).to eq(204)
+
+        road_trip_response = JSON.parse(response.body, symbolize_names: true)
+
+        expect(road_trip_response).to be_a(Hash)
+        expect(road_trip_response).to have_key(:data)
+        expect(road_trip_response[:data]).to be_a(Hash)
+        expect(road_trip_response[:data]).to have_key(:id)
+        expect(road_trip_response[:data][:id]).to eq("null")
+        expect(road_trip_response[:data]).to have_key(:type)
+        expect(road_trip_response[:data][:type]).to eq('roadtrip')
+        expect(road_trip_response[:data]).to have_key(:attributes)
+        expect(weather[:data][:attributes]).to be_a(Hash)
+        expect(weather[:data][:attributes].count).to eq(4)
+        expect(weather[:data][:attributes]).to have_key(:start_city)
+        expect(weather[:data][:attributes][:start_city]).to eq("Denver,CO")
+        expect(weather[:data][:attributes]).to have_key(:end_city)
+        expect(weather[:data][:attributes][:end_city]).to eq("Pueblo,CO")
+        expect(weather[:data][:attributes]).to have_key(:travel_time)
+        expect(weather[:data][:attributes][:travel_time]).to be_a(String)
+        expect(weather[:data][:attributes]).to have_key(:weather_at_eta)
+        expect(weather[:data][:attributes][:weather_at_eta]).to be_a(Hash)
+        expect(weather[:data][:attributes][:weather_at_eta].count).to eq(2)
+        expect(weather[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
+        expect(weather[:data][:attributes][:weather_at_eta][:temperature]).to be_a_kind_of(Numeric)
+        expect(weather[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
+        expect(weather[:data][:attributes][:weather_at_eta][:conditions]).to be_a(String)
+
+      end
     end
   end
 
@@ -40,10 +69,10 @@ describe "User Creation" do
 
         headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
         post "/api/v1/road_trip", headers: headers, params: body, as: :json
-        expect(response.status).to eq(404)
+        expect(response.status).to eq(401)
 
         user_json = JSON.parse(response.body, symbolize_names: true)
-        expect(user_json[:error]).to eq("Request Bad")
+        expect(user_json[:error]).to eq("Unauthorized")
       end
     end
   end
