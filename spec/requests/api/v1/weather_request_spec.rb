@@ -13,15 +13,13 @@ describe "Retrieve weather for a city" do
         expect(weather).to be_a(Hash)
         expect(weather).to have_key(:data)
         expect(weather[:data]).to be_a(Hash)
-
         expect(weather[:data]).to have_key(:id)
         expect(weather[:data][:id]).to eq("null")
-
         expect(weather[:data]).to have_key(:type)
         expect(weather[:data][:type]).to eq('forecast')
-
+        
         expect(weather[:data]).to have_key(:attributes)
-
+        expect(weather[:data][:attributes].count).to eq(3)
         expect(weather[:data][:attributes]).to have_key(:current_weather)
         expect(weather[:data][:attributes][:current_weather]).to have_key(:datetime)
         expect(weather[:data][:attributes][:current_weather][:datetime]).to be_a(String)
