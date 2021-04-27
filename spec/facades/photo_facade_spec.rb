@@ -42,7 +42,7 @@ describe "Photo Facade" do
       VCR.use_cassette("photo_id_facade") do
         id = @photo_facade_instance.photo_id
         expect(id).to be_a(String)
-        expect(id).to eq("51137658107")
+        expect(id).to eq("51139498527")
       end
     end
   end
