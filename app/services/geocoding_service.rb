@@ -4,6 +4,14 @@ class GeocodingService
     GeocodingService.parser(response.body)
   end
 
+  def self.road_trip(destination)
+    response = conn.get("directions/v2/route") do |request|
+      request.params['from'] = destination["origin"]
+      request.params['to'] = destination["destination"]
+    end
+    GeocodingService.parser(response.body)
+  end
+
   private
 
   def self.parser(body)
