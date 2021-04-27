@@ -6,13 +6,12 @@ describe "User Creation" do
       body = {
                  email: 'jake@ihopethiswork.org',
                  password: 'h1tech',
-                 password_confitmation: 'h1tech'
+                 password_confirmation: 'h1tech'
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
 
-      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
-
+      post "/api/v1/users", headers: headers, params: body, as: :json
 
       expect(response).to be_successful
       expect(response.status).to eq(201)
@@ -42,11 +41,11 @@ describe "User Creation" do
       body = {
                 email: 'jake@ihopethiswork.org',
                 password: 'h1tech',
-                password_confitmation: 'hItech'
+                password_confirmation: 'hItech'
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      post "/api/v1/users", headers: headers, params: body, as: :json
       expect(response.status).to eq(404)
 
       user_json = JSON.parse(response.body, symbolize_names: true)
@@ -57,11 +56,11 @@ describe "User Creation" do
       body = {
                  email: 'jake@ihopethiswork.org',
                  password: '',
-                 password_confitmation: ''
+                 password_confirmation: ''
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      post "/api/v1/users", headers: headers, params: body, as: :json
       expect(response.status).to eq(404)
 
       user_json = JSON.parse(response.body, symbolize_names: true)
@@ -72,11 +71,11 @@ describe "User Creation" do
       body = {
                  email: '',
                  password: 'h1tech',
-                 password_confitmation: 'h1tech'
+                 password_confirmation: 'h1tech'
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      post "/api/v1/users", headers: headers, params: body, as: :json
       expect(response.status).to eq(404)
 
       user_json = JSON.parse(response.body, symbolize_names: true)
@@ -90,11 +89,11 @@ describe "User Creation" do
       body = {
                  email: 'jake@ihopethiswork.org',
                  password: 'h1tech',
-                 password_confitmation: 'h1tech'
+                 password_confirmation: 'h1tech'
                }
 
       headers = {"CONTENT_TYPE" => "application/json", 'ACCEPT' => 'application/json' }
-      post "/api/v1/users", headers: headers, params: JSON.generate(body: body)
+      post "/api/v1/users", headers: headers, params: body, as: :json
       expect(response.status).to eq(404)
 
       user_json = JSON.parse(response.body, symbolize_names: true)

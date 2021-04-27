@@ -11,14 +11,12 @@ class Api::V1::UsersController < ApplicationController
     end
   end
 
-
-  private
-
   def user_params
-    params.require(:body).permit(:email, :password)
+    {email: params[:email].downcase, password: params[:password]}
+
   end
 
   def password_mismatch
-    params[:body][:password] != params[:body][:password_confitmation]
+    params[:password] != params[:password_confirmation]
   end
 end
