@@ -26,7 +26,7 @@ describe "Roadtrip Endpoint" do
         post "/api/v1/road_trip", headers: headers, params: body, as: :json
 
         expect(response).to be_successful
-        expect(response.status).to eq(204)
+        expect(response.status).to eq(200)
 
         road_trip_response = JSON.parse(response.body, symbolize_names: true)
 
@@ -36,23 +36,23 @@ describe "Roadtrip Endpoint" do
         expect(road_trip_response[:data]).to have_key(:id)
         expect(road_trip_response[:data][:id]).to eq("null")
         expect(road_trip_response[:data]).to have_key(:type)
-        expect(road_trip_response[:data][:type]).to eq('roadtrip')
+        expect(road_trip_response[:data][:type]).to eq('road_trip')
         expect(road_trip_response[:data]).to have_key(:attributes)
-        expect(weather[:data][:attributes]).to be_a(Hash)
-        expect(weather[:data][:attributes].count).to eq(4)
-        expect(weather[:data][:attributes]).to have_key(:start_city)
-        expect(weather[:data][:attributes][:start_city]).to eq("Denver,CO")
-        expect(weather[:data][:attributes]).to have_key(:end_city)
-        expect(weather[:data][:attributes][:end_city]).to eq("Pueblo,CO")
-        expect(weather[:data][:attributes]).to have_key(:travel_time)
-        expect(weather[:data][:attributes][:travel_time]).to be_a(String)
-        expect(weather[:data][:attributes]).to have_key(:weather_at_eta)
-        expect(weather[:data][:attributes][:weather_at_eta]).to be_a(Hash)
-        expect(weather[:data][:attributes][:weather_at_eta].count).to eq(2)
-        expect(weather[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
-        expect(weather[:data][:attributes][:weather_at_eta][:temperature]).to be_a_kind_of(Numeric)
-        expect(weather[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
-        expect(weather[:data][:attributes][:weather_at_eta][:conditions]).to be_a(String)
+        expect(road_trip_response[:data][:attributes]).to be_a(Hash)
+        expect(road_trip_response[:data][:attributes].count).to eq(4)
+        expect(road_trip_response[:data][:attributes]).to have_key(:start_city)
+        expect(road_trip_response[:data][:attributes][:start_city]).to eq("Denver,CO")
+        expect(road_trip_response[:data][:attributes]).to have_key(:end_city)
+        expect(road_trip_response[:data][:attributes][:end_city]).to eq("Pueblo,CO")
+        expect(road_trip_response[:data][:attributes]).to have_key(:travel_time)
+        expect(road_trip_response[:data][:attributes][:travel_time]).to be_a(String)
+        expect(road_trip_response[:data][:attributes]).to have_key(:weather_at_eta)
+        expect(road_trip_response[:data][:attributes][:weather_at_eta]).to be_a(Hash)
+        expect(road_trip_response[:data][:attributes][:weather_at_eta].count).to eq(2)
+        expect(road_trip_response[:data][:attributes][:weather_at_eta]).to have_key(:temperature)
+        expect(road_trip_response[:data][:attributes][:weather_at_eta][:temperature]).to be_a_kind_of(Numeric)
+        expect(road_trip_response[:data][:attributes][:weather_at_eta]).to have_key(:conditions)
+        expect(road_trip_response[:data][:attributes][:weather_at_eta][:conditions]).to be_a(String)
 
       end
     end
