@@ -1,6 +1,6 @@
 class GeocodingService
   def self.address_cordinates(location)
-    response = conn.get("?location=#{location}")
+    response = conn.get("geocoding/v1/address?location=#{location}")
     GeocodingService.parser(response.body)
   end
 
@@ -11,7 +11,7 @@ class GeocodingService
   end
 
   def self.conn
-    Faraday.new('http://www.mapquestapi.com/geocoding/v1/address') do |request|
+    Faraday.new('http://www.mapquestapi.com/') do |request|
       request.params['key'] = ENV['geocode_key']
     end
   end
