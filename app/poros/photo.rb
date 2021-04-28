@@ -7,7 +7,7 @@ class Photo
               :profile,
               :source
 
-  def initialize(data)
+  def initialize(data = Hash.new)
     @id = "null"
     @title = data[:title]
     @url = data[:url]

@@ -6,10 +6,10 @@ class RoadTrip
               :travel_time,
               :weather_at_eta
 
-  def initialize(data, route_time, destination)
+  def initialize(data, route_time, destination={"origin" => "none" , "destination" => "none" })
     @id = "null"
-    @start_city = destination["origin"]
-    @end_city = destination["destination"]
+    @start_city = destination["origin"] 
+    @end_city = destination["destination"] 
     @travel_time = route_time
     @weather_at_eta = weather_checker(data)
   end
