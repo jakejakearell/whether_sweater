@@ -1,9 +1,9 @@
 require 'rails_helper'
 
-RSpec.describe 'Geocoding Service' do
+RSpec.describe 'Weather Service' do
   describe 'Happy Paths' do
 
-    it 'will establish a connection to the geocoding service' do
+    it 'will establish a connection to the weather service' do
       VCR.use_cassette('weather_service_test') do
         service = WeatherService.current_forecast('Denver,CO')
         expect(service).to be_a(Hash)
@@ -82,11 +82,11 @@ RSpec.describe 'Geocoding Service' do
       end
     end
   end
-  describe 'Sad Paths' do
 
-    it 'will establish a connection to the geocoding service' do
-      VCR.use_cassette('weather_service_test') do
-        service = WeatherService.current_forecast('Denver,CO')
+  describe 'Sad Paths' do
+    it 'will still estable a connection to the weather service even when given nil' do
+      VCR.use_cassette('weather_service_test_sad') do
+        service = WeatherService.current_forecast(nil)
         expect(service).to be_a(Hash)
 
         #information for current_weather

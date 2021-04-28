@@ -119,9 +119,7 @@ describe "Weather Facade" do
         expect(current_weather[:conditions]).to be_a(String)
         expect(current_weather).to have_key(:icon)
         expect(current_weather[:icon]).to be_a(String)
-
       end
     end
-
   end
 end

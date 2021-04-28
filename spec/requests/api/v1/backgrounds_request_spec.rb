@@ -45,15 +45,6 @@ describe "Retrieve a photo based on a location" do
       end
     end
 
-    it "gives error when an empty location is used" do
-      VCR.use_cassette('backgrounds_endpoint_sad_path') do
-        get '/api/v1/backgrounds?location='
-        weather = JSON.parse(response.body, symbolize_names: true)
-        expect(weather[:status]).to eq(404)
-        expect(weather[:error]).to eq("Must Enter a location")
-      end
-    end
-
     it "gives error when params missing" do
       VCR.use_cassette('backgrounds_endpoint_missing_param_sad_path') do
         get '/api/v1/backgrounds?'

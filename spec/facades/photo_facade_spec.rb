@@ -46,8 +46,15 @@ describe "Photo Facade" do
       end
     end
   end
+
   describe "Sad paths do" do
+    before :each do
+      VCR.use_cassette("photo_facade_instance") do
+        @photo_facade_instance = PhotoFacade.new(nil)
+      end
+    end
     it "will return an error if an invalid location is used" do
+      require "pry"; binding.pry
     end
 
     it "will return an empty object if there are no " do
