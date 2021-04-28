@@ -9,7 +9,7 @@ RSpec.describe Photo do
         expect(result).to be_a(Photo)
         expect(result.id).to eq("null")
         expect(result.url).to eq("https://www.flickr.com/photos/john_crisanti_photography/51086607992/")
-        expect(result.location).to eq("mead,co")
+        expect(result.location).to eq("Colorado, Highland")
         expect(result.source).to eq("flickr.com")
         expect(result.photographer).to eq("Colorado & Southern")
         expect(result.profile).to eq("https://www.flickr.com/photos/61254866@N07")
