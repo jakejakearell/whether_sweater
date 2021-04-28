@@ -1,5 +1,4 @@
 class PhotoService < ApplicationService
-
   def self.photo_location_lat_lon_search(location)
     location = GeocodingFacade.new(location).check_service_call_status
     response = conn.get("/services/rest") do |request|

@@ -20,7 +20,7 @@ class Api::V1::RoadTripController < ApplicationController
   end
 
   def road_trip
-    RoadTripFacade.new(destination_and_origin).make_poro
+    RoadTripFacade.new(destination_and_origin).assess_road_trip_viability
   end
 
   def destination_and_origin

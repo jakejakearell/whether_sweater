@@ -29,7 +29,7 @@ class RoadTripFacade
     end
   end
 
-  def make_poro
+  def assess_road_trip_viability
     if @data[:route][:routeError][:errorCode] == 2
       RoadTrip.new(nil, "impossible", destination)
     elsif @data[:route][:routeError][:errorCode] != -400

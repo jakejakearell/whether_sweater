@@ -5,7 +5,7 @@ RSpec.describe RoadTrip do
     before :each do
       VCR.use_cassette("road_trip_poro") do
         destination = {"origin"=>"Chicago,IL", "destination"=>"Santa Cruz,NM"}
-        @result = RoadTripFacade.new(destination).make_poro
+        @result = RoadTripFacade.new(destination).assess_road_trip_viability
       end
     end
 

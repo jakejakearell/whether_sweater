@@ -17,7 +17,7 @@ describe "Road Trip Facade" do
 
     it "make a road_trip poro" do
       VCR.use_cassette("can make poro") do
-        lets_see = @road_trip_instance.make_poro
+        lets_see = @road_trip_instance.assess_road_trip_viability
 
       end
     end
