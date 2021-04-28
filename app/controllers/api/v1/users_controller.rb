@@ -12,8 +12,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    {email: params[:email].downcase, password: params[:password]}
-
+    params.permit(:email, :password)
   end
 
   def password_mismatch

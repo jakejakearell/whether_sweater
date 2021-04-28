@@ -1,9 +1,29 @@
 class Api::V1::RoadTripController < ApplicationController
   def create
-    if User.find_by(api_key: params[:api_key])
-      # RoadTripFacade.new(params[:origin], params[:destination]).trip
-    else
-      render json: {error: "Request Bad",status: 404}, status: 404
+    begin
+      if user && road_trip
+        render json: RoadTripSerializer.new(road_trip)
+      elsif road_trip == false
+        render json: {error: "Bad Params",status: 401}, status: 401
+      else
+        render json: {error: "Unauthorized",status: 401}, status: 401
+      end
+    rescue ActionController::ParameterMissing
+      render json: {error: "Missing Params",status: 401}, status: 401
     end
+  end
+
+  private
+
+  def user
+    User.find_by(api_key: params[:api_key])
+  end
+
+  def road_trip
+    RoadTripFacade.new(destination_and_origin).make_poro
+  end
+
+  def destination_and_origin
+    params.require(:road_trip).permit(:origin, :destination)
   end
 end

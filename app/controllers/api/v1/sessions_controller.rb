@@ -1,8 +1,5 @@
 class Api::V1::SessionsController < ApplicationController
   def create
-    # existing_user = User.find_by(email: email)
-    # good = existing_user.authenticate(password)
-    # if existing_user && good
     if User.find_by(email: email)
       user = User.find_by(email: email)
       if user.authenticate(password)
@@ -23,9 +20,5 @@ class Api::V1::SessionsController < ApplicationController
 
   def password
     params[:password]
-  end
-
-  def user_params
-    {email: params[:email].downcase, password: params[:password]}
   end
 end
