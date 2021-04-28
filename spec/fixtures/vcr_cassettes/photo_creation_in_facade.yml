@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://api.flickr.com/services/rest?api_key=Photo Key&format=json&method=flickr.photos.getInfo&nojsoncallback=1&photo_id=51139498527
+    uri: https://api.flickr.com/services/rest?api_key=Photo Key&format=json&method=flickr.photos.getInfo&nojsoncallback=1&photo_id=51076718812
     body:
       encoding: US-ASCII
       string: ''
@@ -24,15 +24,13 @@ http_interactions:
       - chunked
       Connection:
       - keep-alive
-      Vary:
-      - Accept-Encoding
       Date:
-      - Tue, 27 Apr 2021 17:10:05 GMT
+      - Wed, 28 Apr 2021 02:53:19 GMT
       Server:
       - Apache/2.4.46 (Ubuntu)
       Set-Cookie:
       - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
-        expires=Thu, 27-May-2021 17:10:05 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+        expires=Fri, 28-May-2021 02:53:19 GMT; Max-Age=2592000; path=/; domain=.flickr.com
       X-Content-Type-Options:
       - nosniff
       X-Frame-Options:
@@ -40,19 +38,202 @@ http_interactions:
       X-Cache:
       - Miss from cloudfront
       Via:
-      - 1.1 29f1da35ce271d2cdc88184ed0c1f86d.cloudfront.net (CloudFront)
+      - 1.1 2ad801a60bd36fbeb6a62fab7eabe330.cloudfront.net (CloudFront)
       X-Amz-Cf-Pop:
       - DEN50-C2
       X-Amz-Cf-Id:
-      - 9qcxSQnG0M73we_aZmhO16DAyCaWjtCJwIJaHWaCvmNljzAoxxkBig==
+      - sU3l9as_MI9w3I-yXRWUXafuqttLCni7bJhZPsPyV00-VkmEi-ZPpA==
     body:
-      encoding: ASCII-8BIT
-      string: '{"photo":{"id":"51139498527","secret":"4307dca9d6","server":"65535","farm":66,"dateuploaded":"1619451756","isfavorite":0,"license":"3","safety_level":"0","rotation":0,"originalsecret":"7ec70ac69a","originalformat":"jpg","owner":{"nsid":"39877441@N05","username":"mclcbooks","realname":"Michael
-        Levine-Clark","location":"Denver, USA","iconserver":"7288","iconfarm":8,"path_alias":null},"title":{"_content":"Tulip"},"description":{"_content":"Denver
-        Botanic Gardens"},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1619451756","taken":"2021-04-25
-        09:02:37","takengranularity":"0","takenunknown":"0","lastupdate":"1619526687"},"views":"588","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":1},"usage":{"candownload":1,"canblog":0,"canprint":0,"canshare":1},"comments":{"_content":"17"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[{"id":"39872101-51139498527-535","author":"39877441@N05","authorname":"mclcbooks","raw":"flower","_content":"flower","machine_tag":0},{"id":"39872101-51139498527-140","author":"39877441@N05","authorname":"mclcbooks","raw":"flowers","_content":"flowers","machine_tag":0},{"id":"39872101-51139498527-833","author":"39877441@N05","authorname":"mclcbooks","raw":"floral","_content":"floral","machine_tag":0},{"id":"39872101-51139498527-15851","author":"39877441@N05","authorname":"mclcbooks","raw":"tulip","_content":"tulip","machine_tag":0},{"id":"39872101-51139498527-4264","author":"39877441@N05","authorname":"mclcbooks","raw":"tulips","_content":"tulips","machine_tag":0},{"id":"39872101-51139498527-2620","author":"39877441@N05","authorname":"mclcbooks","raw":"spring","_content":"spring","machine_tag":0},{"id":"39872101-51139498527-19449","author":"39877441@N05","authorname":"mclcbooks","raw":"bulbs","_content":"bulbs","machine_tag":0},{"id":"39872101-51139498527-707158","author":"39877441@N05","authorname":"mclcbooks","raw":"Denver
-        Botanic Gardens","_content":"denverbotanicgardens","machine_tag":0},{"id":"39872101-51139498527-3157","author":"39877441@N05","authorname":"mclcbooks","raw":"Colorado","_content":"colorado","machine_tag":0},{"id":"39872101-51139498527-987","author":"39877441@N05","authorname":"mclcbooks","raw":"yellow","_content":"yellow","machine_tag":0}]},"location":{"latitude":"39.732546","longitude":"-104.960879","accuracy":"16","context":"0","locality":{"_content":"Cheesman
-        Park"},"county":{"_content":"Denver"},"region":{"_content":"Colorado"},"country":{"_content":"United
-        States"},"neighbourhood":{"_content":""}},"geoperms":{"ispublic":1,"iscontact":0,"isfriend":0,"isfamily":0},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/39877441@N05\/51139498527\/"}]},"media":"photo"},"stat":"ok"}'
-  recorded_at: Tue, 27 Apr 2021 17:10:05 GMT
+      encoding: UTF-8
+      string: '{"photo":{"id":"51076718812","secret":"b3b260cbdb","server":"65535","farm":66,"dateuploaded":"1619434543","isfavorite":0,"license":"0","safety_level":"0","rotation":0,"owner":{"nsid":"76475621@N00","username":"Tim
+        Kiser","realname":"Tim Kiser","location":null,"iconserver":"7921","iconfarm":8,"path_alias":"timboduke"},"title":{"_content":"A
+        striped awning for a commercial building!"},"description":{"_content":"In
+        Denver, Colorado, on February 8th, 2018, a building at the southeast corner
+        of East 20th Avenue and Lincoln Street.\n\n-----------------------\n\nGetty
+        Thesaurus of Geographic Names terms:\n\u2022 Denver (<a href=\"http:\/\/vocab.getty.edu\/page\/tgn\/7013545\"
+        rel=\"noreferrer nofollow\">7013545<\/a>)\n\nArt &amp; Architecture Thesaurus
+        terms:\n\u2022 awnings (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300254200\"
+        rel=\"noreferrer nofollow\">300254200<\/a>)\n\u2022 commercial buildings (<a
+        href=\"http:\/\/vocab.getty.edu\/page\/aat\/300005147\" rel=\"noreferrer nofollow\">300005147<\/a>)\n\u2022
+        exterior walls (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300002523\"
+        rel=\"noreferrer nofollow\">300002523<\/a>)\n\u2022 graffiti (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300015613\"
+        rel=\"noreferrer nofollow\">300015613<\/a>)\n\u2022 gray (color) (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300130811\"
+        rel=\"noreferrer nofollow\">300130811<\/a>)\n\u2022 light orange (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300126763\"
+        rel=\"noreferrer nofollow\">300126763<\/a>)\n\u2022 lighting fixtures (<a
+        href=\"http:\/\/vocab.getty.edu\/page\/aat\/300180081\" rel=\"noreferrer nofollow\">300180081<\/a>)\n\u2022
+        orange (color) (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300126734\"
+        rel=\"noreferrer nofollow\">300126734<\/a>)\n\u2022 paint (coating) (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300015029\"
+        rel=\"noreferrer nofollow\">300015029<\/a>)\n\u2022 parking meters (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300003857\"
+        rel=\"noreferrer nofollow\">300003857<\/a>)\n\u2022 stripes (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300010230\"
+        rel=\"noreferrer nofollow\">300010230<\/a>)\n\nWikidata items:\n\u2022 8 February
+        2018 (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q45919756\" rel=\"noreferrer
+        nofollow\">Q45919756<\/a>)\n\u2022 Denver metropolitan area (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q2750084\"
+        rel=\"noreferrer nofollow\">Q2750084<\/a>)\n\u2022 February 8 (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q2323\"
+        rel=\"noreferrer nofollow\">Q2323<\/a>)\n\u2022 February 2018 (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q23994857\"
+        rel=\"noreferrer nofollow\">Q23994857<\/a>)\n\u2022 Front Range Urban Corridor
+        (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q17067421\" rel=\"noreferrer
+        nofollow\">Q17067421<\/a>)\n\u2022 graffiti abatement (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q5592467\"
+        rel=\"noreferrer nofollow\">Q5592467<\/a>)\n\u2022 North Capitol Hill (<a
+        href=\"https:\/\/www.wikidata.org\/wiki\/Q7054363\" rel=\"noreferrer nofollow\">Q7054363<\/a>)\n\u2022
+        Treaty of Fort Wise (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q3536791\"
+        rel=\"noreferrer nofollow\">Q3536791<\/a>)"},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1619434543","taken":"2018-02-08
+        18:55:04","takengranularity":"0","takenunknown":"0","lastupdate":"1619449767"},"views":"38","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":0},"usage":{"candownload":0,"canblog":0,"canprint":0,"canshare":0},"comments":{"_content":"0"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[{"id":"4676368-51076718812-518825957","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Cession 426","_content":"cession426","machine_tag":0},{"id":"4676368-51076718812-3441787","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"gray wall","_content":"graywall","machine_tag":0},{"id":"4676368-51076718812-10472746","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"IMG_6604","_content":"img6604","machine_tag":0},{"id":"4676368-51076718812-130303","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"parking meters","_content":"parkingmeters","machine_tag":0},{"id":"4676368-51076718812-1622698","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"striped awning","_content":"stripedawning","machine_tag":0},{"id":"4676368-51076718812-1761","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"awning","_content":"awning","machine_tag":0},{"id":"4676368-51076718812-12248443","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"central Colorado","_content":"centralcolorado","machine_tag":0},{"id":"4676368-51076718812-279657568","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"2018-02-08","_content":"20180208","machine_tag":0},{"id":"4676368-51076718812-1546823","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Lincoln Street","_content":"lincolnstreet","machine_tag":0},{"id":"4676368-51076718812-354413844","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"different shades of orange","_content":"differentshadesoforange","machine_tag":0},{"id":"4676368-51076718812-94788206","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"North Capitol Hill neighborhood","_content":"northcapitolhillneighborhood","machine_tag":0},{"id":"4676368-51076718812-518825972","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Treaty of Fort Wise","_content":"treatyoffortwise","machine_tag":0},{"id":"4676368-51076718812-145991","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Denver Colorado","_content":"denvercolorado","machine_tag":0},{"id":"4676368-51076718812-19052450","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"gray paint","_content":"graypaint","machine_tag":0},{"id":"4676368-51076718812-935136","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"commercial building","_content":"commercialbuilding","machine_tag":0},{"id":"4676368-51076718812-4522008","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"painted-over graffiti","_content":"paintedovergraffiti","machine_tag":0},{"id":"4676368-51076718812-9669","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Denver","_content":"denver","machine_tag":0},{"id":"4676368-51076718812-314287443","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"February 2018","_content":"february2018","machine_tag":0},{"id":"4676368-51076718812-18487621","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"City and County of Denver","_content":"cityandcountyofdenver","machine_tag":0},{"id":"4676368-51076718812-27527","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"February","_content":"february","machine_tag":0},{"id":"4676368-51076718812-2420490","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"vertical stripes","_content":"verticalstripes","machine_tag":0},{"id":"4676368-51076718812-271370","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"2018","_content":"2018","machine_tag":0},{"id":"4676368-51076718812-518858576","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"useless awning","_content":"uselessawning","machine_tag":0},{"id":"4676368-51076718812-518858581","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"orange and light orange","_content":"orangeandlightorange","machine_tag":0},{"id":"4676368-51076718812-37852","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Front Range","_content":"frontrange","machine_tag":0},{"id":"4676368-51076718812-9666371","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"North Capitol Hill","_content":"northcapitolhill","machine_tag":0},{"id":"4676368-51076718812-2014","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"graffiti","_content":"graffiti","machine_tag":0},{"id":"4676368-51076718812-2371903","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"20th Avenue","_content":"20thavenue","machine_tag":0},{"id":"4676368-51076718812-518858586","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"ornamental awning","_content":"ornamentalawning","machine_tag":0},{"id":"4676368-51076718812-5346341","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"orange awning","_content":"orangeawning","machine_tag":0},{"id":"4676368-51076718812-31688061","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"East 20th Avenue","_content":"east20thavenue","machine_tag":0},{"id":"4676368-51076718812-3157","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Colorado","_content":"colorado","machine_tag":false},{"id":"4676368-51076718812-518858591","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"20th and Lincoln","_content":"20thandlincoln","machine_tag":0},{"id":"4676368-51076718812-66337296","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"decorative awning","_content":"decorativeawning","machine_tag":0},{"id":"4676368-51076718812-15818792","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"graffiti abatement","_content":"graffitiabatement","machine_tag":0},{"id":"4676368-51076718812-518858596","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"ridiculous awning","_content":"ridiculousawning","machine_tag":0},{"id":"4676368-51076718812-820137","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Colorado Front Range","_content":"coloradofrontrange","machine_tag":0},{"id":"4676368-51076718812-3966661","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"exterior wall","_content":"exteriorwall","machine_tag":0}]},"location":{"latitude":"39.747605","longitude":"-104.985998","accuracy":"16","context":"0","locality":{"_content":"Denver"},"county":{"_content":"Denver"},"region":{"_content":"Colorado"},"country":{"_content":"United
+        States"},"neighbourhood":{"_content":""}},"geoperms":{"ispublic":1,"iscontact":0,"isfriend":0,"isfamily":0},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/timboduke\/51076718812\/"}]},"media":"photo"},"stat":"ok"}'
+  recorded_at: Wed, 28 Apr 2021 02:53:19 GMT
+- request:
+    method: get
+    uri: https://api.flickr.com/services/rest?api_key=Photo Key&format=json&method=flickr.photos.getInfo&nojsoncallback=1&photo_id=51076718812
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Faraday v1.4.1
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Date:
+      - Wed, 28 Apr 2021 02:53:20 GMT
+      Server:
+      - Apache/2.4.46 (Ubuntu)
+      Set-Cookie:
+      - ccc=%7B%22needsConsent%22%3Afalse%2C%22managed%22%3A0%2C%22changed%22%3A0%2C%22info%22%3A%7B%22cookieBlock%22%3A%7B%22level%22%3A0%2C%22blockRan%22%3A0%7D%7D%7D;
+        expires=Fri, 28-May-2021 02:53:19 GMT; Max-Age=2592000; path=/; domain=.flickr.com
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Cache:
+      - Miss from cloudfront
+      Via:
+      - 1.1 91f1c114eac2b00f07286bc49dddd7e5.cloudfront.net (CloudFront)
+      X-Amz-Cf-Pop:
+      - DEN50-C2
+      X-Amz-Cf-Id:
+      - _6tYTGiSi4gqMTwkNKHOoLcgcd-EzSdZAMyL2XEW1rr_AeyQEZPu8g==
+    body:
+      encoding: UTF-8
+      string: '{"photo":{"id":"51076718812","secret":"b3b260cbdb","server":"65535","farm":66,"dateuploaded":"1619434543","isfavorite":0,"license":"0","safety_level":"0","rotation":0,"owner":{"nsid":"76475621@N00","username":"Tim
+        Kiser","realname":"Tim Kiser","location":null,"iconserver":"7921","iconfarm":8,"path_alias":"timboduke"},"title":{"_content":"A
+        striped awning for a commercial building!"},"description":{"_content":"In
+        Denver, Colorado, on February 8th, 2018, a building at the southeast corner
+        of East 20th Avenue and Lincoln Street.\n\n-----------------------\n\nGetty
+        Thesaurus of Geographic Names terms:\n\u2022 Denver (<a href=\"http:\/\/vocab.getty.edu\/page\/tgn\/7013545\"
+        rel=\"noreferrer nofollow\">7013545<\/a>)\n\nArt &amp; Architecture Thesaurus
+        terms:\n\u2022 awnings (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300254200\"
+        rel=\"noreferrer nofollow\">300254200<\/a>)\n\u2022 commercial buildings (<a
+        href=\"http:\/\/vocab.getty.edu\/page\/aat\/300005147\" rel=\"noreferrer nofollow\">300005147<\/a>)\n\u2022
+        exterior walls (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300002523\"
+        rel=\"noreferrer nofollow\">300002523<\/a>)\n\u2022 graffiti (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300015613\"
+        rel=\"noreferrer nofollow\">300015613<\/a>)\n\u2022 gray (color) (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300130811\"
+        rel=\"noreferrer nofollow\">300130811<\/a>)\n\u2022 light orange (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300126763\"
+        rel=\"noreferrer nofollow\">300126763<\/a>)\n\u2022 lighting fixtures (<a
+        href=\"http:\/\/vocab.getty.edu\/page\/aat\/300180081\" rel=\"noreferrer nofollow\">300180081<\/a>)\n\u2022
+        orange (color) (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300126734\"
+        rel=\"noreferrer nofollow\">300126734<\/a>)\n\u2022 paint (coating) (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300015029\"
+        rel=\"noreferrer nofollow\">300015029<\/a>)\n\u2022 parking meters (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300003857\"
+        rel=\"noreferrer nofollow\">300003857<\/a>)\n\u2022 stripes (<a href=\"http:\/\/vocab.getty.edu\/page\/aat\/300010230\"
+        rel=\"noreferrer nofollow\">300010230<\/a>)\n\nWikidata items:\n\u2022 8 February
+        2018 (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q45919756\" rel=\"noreferrer
+        nofollow\">Q45919756<\/a>)\n\u2022 Denver metropolitan area (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q2750084\"
+        rel=\"noreferrer nofollow\">Q2750084<\/a>)\n\u2022 February 8 (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q2323\"
+        rel=\"noreferrer nofollow\">Q2323<\/a>)\n\u2022 February 2018 (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q23994857\"
+        rel=\"noreferrer nofollow\">Q23994857<\/a>)\n\u2022 Front Range Urban Corridor
+        (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q17067421\" rel=\"noreferrer
+        nofollow\">Q17067421<\/a>)\n\u2022 graffiti abatement (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q5592467\"
+        rel=\"noreferrer nofollow\">Q5592467<\/a>)\n\u2022 North Capitol Hill (<a
+        href=\"https:\/\/www.wikidata.org\/wiki\/Q7054363\" rel=\"noreferrer nofollow\">Q7054363<\/a>)\n\u2022
+        Treaty of Fort Wise (<a href=\"https:\/\/www.wikidata.org\/wiki\/Q3536791\"
+        rel=\"noreferrer nofollow\">Q3536791<\/a>)"},"visibility":{"ispublic":1,"isfriend":0,"isfamily":0},"dates":{"posted":"1619434543","taken":"2018-02-08
+        18:55:04","takengranularity":"0","takenunknown":"0","lastupdate":"1619449767"},"views":"38","editability":{"cancomment":0,"canaddmeta":0},"publiceditability":{"cancomment":1,"canaddmeta":0},"usage":{"candownload":0,"canblog":0,"canprint":0,"canshare":0},"comments":{"_content":"0"},"notes":{"note":[]},"people":{"haspeople":0},"tags":{"tag":[{"id":"4676368-51076718812-518825957","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Cession 426","_content":"cession426","machine_tag":0},{"id":"4676368-51076718812-3441787","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"gray wall","_content":"graywall","machine_tag":0},{"id":"4676368-51076718812-10472746","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"IMG_6604","_content":"img6604","machine_tag":0},{"id":"4676368-51076718812-130303","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"parking meters","_content":"parkingmeters","machine_tag":0},{"id":"4676368-51076718812-1622698","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"striped awning","_content":"stripedawning","machine_tag":0},{"id":"4676368-51076718812-1761","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"awning","_content":"awning","machine_tag":0},{"id":"4676368-51076718812-12248443","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"central Colorado","_content":"centralcolorado","machine_tag":0},{"id":"4676368-51076718812-279657568","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"2018-02-08","_content":"20180208","machine_tag":0},{"id":"4676368-51076718812-1546823","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Lincoln Street","_content":"lincolnstreet","machine_tag":0},{"id":"4676368-51076718812-354413844","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"different shades of orange","_content":"differentshadesoforange","machine_tag":0},{"id":"4676368-51076718812-94788206","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"North Capitol Hill neighborhood","_content":"northcapitolhillneighborhood","machine_tag":0},{"id":"4676368-51076718812-518825972","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Treaty of Fort Wise","_content":"treatyoffortwise","machine_tag":0},{"id":"4676368-51076718812-145991","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Denver Colorado","_content":"denvercolorado","machine_tag":0},{"id":"4676368-51076718812-19052450","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"gray paint","_content":"graypaint","machine_tag":0},{"id":"4676368-51076718812-935136","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"commercial building","_content":"commercialbuilding","machine_tag":0},{"id":"4676368-51076718812-4522008","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"painted-over graffiti","_content":"paintedovergraffiti","machine_tag":0},{"id":"4676368-51076718812-9669","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Denver","_content":"denver","machine_tag":0},{"id":"4676368-51076718812-314287443","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"February 2018","_content":"february2018","machine_tag":0},{"id":"4676368-51076718812-18487621","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"City and County of Denver","_content":"cityandcountyofdenver","machine_tag":0},{"id":"4676368-51076718812-27527","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"February","_content":"february","machine_tag":0},{"id":"4676368-51076718812-2420490","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"vertical stripes","_content":"verticalstripes","machine_tag":0},{"id":"4676368-51076718812-271370","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"2018","_content":"2018","machine_tag":0},{"id":"4676368-51076718812-518858576","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"useless awning","_content":"uselessawning","machine_tag":0},{"id":"4676368-51076718812-518858581","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"orange and light orange","_content":"orangeandlightorange","machine_tag":0},{"id":"4676368-51076718812-37852","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Front Range","_content":"frontrange","machine_tag":0},{"id":"4676368-51076718812-9666371","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"North Capitol Hill","_content":"northcapitolhill","machine_tag":0},{"id":"4676368-51076718812-2014","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"graffiti","_content":"graffiti","machine_tag":0},{"id":"4676368-51076718812-2371903","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"20th Avenue","_content":"20thavenue","machine_tag":0},{"id":"4676368-51076718812-518858586","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"ornamental awning","_content":"ornamentalawning","machine_tag":0},{"id":"4676368-51076718812-5346341","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"orange awning","_content":"orangeawning","machine_tag":0},{"id":"4676368-51076718812-31688061","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"East 20th Avenue","_content":"east20thavenue","machine_tag":0},{"id":"4676368-51076718812-3157","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Colorado","_content":"colorado","machine_tag":false},{"id":"4676368-51076718812-518858591","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"20th and Lincoln","_content":"20thandlincoln","machine_tag":0},{"id":"4676368-51076718812-66337296","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"decorative awning","_content":"decorativeawning","machine_tag":0},{"id":"4676368-51076718812-15818792","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"graffiti abatement","_content":"graffitiabatement","machine_tag":0},{"id":"4676368-51076718812-518858596","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"ridiculous awning","_content":"ridiculousawning","machine_tag":0},{"id":"4676368-51076718812-820137","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"Colorado Front Range","_content":"coloradofrontrange","machine_tag":0},{"id":"4676368-51076718812-3966661","author":"76475621@N00","authorname":"Tim
+        Kiser","raw":"exterior wall","_content":"exteriorwall","machine_tag":0}]},"location":{"latitude":"39.747605","longitude":"-104.985998","accuracy":"16","context":"0","locality":{"_content":"Denver"},"county":{"_content":"Denver"},"region":{"_content":"Colorado"},"country":{"_content":"United
+        States"},"neighbourhood":{"_content":""}},"geoperms":{"ispublic":1,"iscontact":0,"isfriend":0,"isfamily":0},"urls":{"url":[{"type":"photopage","_content":"https:\/\/www.flickr.com\/photos\/timboduke\/51076718812\/"}]},"media":"photo"},"stat":"ok"}'
+  recorded_at: Wed, 28 Apr 2021 02:53:20 GMT
 recorded_with: VCR 6.0.0
