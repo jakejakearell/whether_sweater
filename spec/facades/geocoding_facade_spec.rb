@@ -27,12 +27,12 @@ describe "Geocoding Facade" do
     end
 
   describe "Sad paths"
-    it "will return a poro with location of northpole if no location given" do
+    it "will return a poro with location of 0 0 if no location given" do
       VCR.use_cassette("geocoding_facade_denver_sad_path") do
         result = GeocodingFacade.new(nil).check_service_call_status
         expect(result).to be_a(GeocodedObject)
-        expect(result.latitude).to eq(90)
-        expect(result.longitude).to eq((135))
+        expect(result.latitude).to eq(0)
+        expect(result.longitude).to eq((0))
       end
     end
   end

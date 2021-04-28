@@ -59,8 +59,8 @@ RSpec.describe 'Photo Service' do
         expect(service).to be_a(Hash)
         expect(service).to have_key(:photos)
         expect(service[:photos]).to have_key(:photo)
-        expect(service[:photos][:photo]).to be_a(Array)
-        expect(service[:photos][:photo].count).to eq(0)
+        expect(service[:photos][:photo].first).to have_key(:id)
+        expect(service[:photos][:photo].first[:id]).to be_a(String)
       end
     end
   end

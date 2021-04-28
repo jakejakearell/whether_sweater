@@ -1,6 +1,6 @@
 class WeatherService < ApplicationService
   def self.current_forecast(location)
-    location = GeocodingFacade.new(location).latitude_longitude
+    location = GeocodingFacade.new(location).check_service_call_status
     response = conn.get("data/2.5/onecall") do |request|
       request.params['lat'] = location.latitude
       request.params['lon'] = location.longitude

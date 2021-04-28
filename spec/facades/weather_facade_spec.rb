@@ -88,4 +88,40 @@ describe "Weather Facade" do
       end
     end
   end
+  describe 'Sad Paths' do
+    before :each do
+      VCR.use_cassette("weather_facade_instance_sad") do
+        @weather_facade_instance = WeatherFacade.new(nil)
+      end
+    end
+
+    it "if given no value it will return a  0, 0 long/lat location" do
+      VCR.use_cassette("current_weather_facade_denver_sad") do
+        current_weather = @weather_facade_instance.current_weather_attribute
+        expect(current_weather.keys.count).to eq(10)
+        expect(current_weather).to have_key(:datetime)
+        expect(current_weather[:datetime]).to be_a(Time)
+        expect(current_weather).to have_key(:sunrise)
+        expect(current_weather[:sunrise]).to be_a(Time)
+        expect(current_weather).to have_key(:sunset)
+        expect(current_weather[:sunset]).to be_a(Time)
+        expect(current_weather).to have_key(:temperature)
+        expect(current_weather[:temperature]).to be_a_kind_of(Numeric)
+        expect(current_weather).to have_key(:feels_like)
+        expect(current_weather[:feels_like]).to be_a_kind_of(Numeric)
+        expect(current_weather).to have_key(:humidity)
+        expect(current_weather[:humidity]).to be_a_kind_of(Numeric)
+        expect(current_weather).to have_key(:uvi)
+        expect(current_weather[:uvi]).to be_a_kind_of(Numeric)
+        expect(current_weather).to have_key(:visibility)
+        expect(current_weather[:visibility]).to be_a_kind_of(Numeric)
+        expect(current_weather).to have_key(:conditions)
+        expect(current_weather[:conditions]).to be_a(String)
+        expect(current_weather).to have_key(:icon)
+        expect(current_weather[:icon]).to be_a(String)
+
+      end
+    end
+
+  end
 end

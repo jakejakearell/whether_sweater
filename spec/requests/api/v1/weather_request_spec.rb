@@ -17,7 +17,7 @@ describe "Retrieve weather for a city" do
         expect(weather[:data][:id]).to eq("null")
         expect(weather[:data]).to have_key(:type)
         expect(weather[:data][:type]).to eq('forecast')
-        
+
         expect(weather[:data]).to have_key(:attributes)
         expect(weather[:data][:attributes].count).to eq(3)
         expect(weather[:data][:attributes]).to have_key(:current_weather)
@@ -77,6 +77,17 @@ describe "Retrieve weather for a city" do
     it "gives error when an empty location is used" do
       VCR.use_cassette('forecast_endpoint_sad_path') do
         get '/api/v1/forecast?location='
+
+        weather = JSON.parse(response.body, symbolize_names: true)
+
+        expect(weather[:status]).to eq(404)
+        expect(weather[:error]).to eq("Must Enter a location")
+      end
+    end
+
+    it "gives error when an no location is used" do
+      VCR.use_cassette('forecast_endpoint_sad_path_nil') do
+        get '/api/v1/forecast?'
 
         weather = JSON.parse(response.body, symbolize_names: true)
 

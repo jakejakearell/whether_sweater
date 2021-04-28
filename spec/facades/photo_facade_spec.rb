@@ -42,15 +42,15 @@ describe "Photo Facade" do
       VCR.use_cassette("photo_id_facade") do
         id = @photo_facade_instance.photo_id
         expect(id).to be_a(String)
-        expect(id).to eq("51076718812")
+        expect(id).to eq("51144796785")
       end
     end
   end
   describe "Sad paths do" do
-    xit "will return an error if an invalid location is used" do
+    it "will return an error if an invalid location is used" do
     end
 
-    xit "will return an empty object if there are no " do
+    it "will return an empty object if there are no " do
     end
   end
 end

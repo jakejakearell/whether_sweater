@@ -12,7 +12,7 @@ class GeocodingFacade
 
   def check_service_call_status
     if @data.nil? || @data[:info][:statuscode] == 400
-      GeocodedObject.new({latitude: 90, longitude: 135 })
+      GeocodedObject.new({latitude: 0, longitude: 0 })
     else
       latitude_longitude
     end
