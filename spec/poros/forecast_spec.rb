@@ -17,4 +17,18 @@ RSpec.describe Forecast do
       end
     end
   end
+
+  describe 'sad paths' do
+    it 'has attributes of current_weather, daily_weather, hourly_weather and is a Forecast object' do
+      VCR.use_cassette("forecast_poro_sad") do
+        result = Forecast.new(nil, nil, nil)
+
+        expect(result).to be_a(Forecast)
+        expect(result.id).to eq("null")
+        expect(result.current_weather).to eq(nil)
+        expect(result.daily_weather).to eq(nil)
+        expect(result.hourly_weather).to eq(nil)
+      end
+    end
+  end
 end

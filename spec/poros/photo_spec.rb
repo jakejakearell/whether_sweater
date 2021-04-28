@@ -18,4 +18,22 @@ RSpec.describe Photo do
       end
     end
   end
+
+  describe 'sad path' do
+    it 'will still make a poro without an argument' do
+      VCR.use_cassette("photo_poro_sad") do
+        result = Photo.new()
+
+        expect(result).to be_a(Photo)
+        expect(result.id).to eq("null")
+        expect(result.url).to eq(nil)
+        expect(result.location).to eq(nil)
+        expect(result.source).to eq(nil)
+        expect(result.photographer).to eq(nil)
+        expect(result.profile).to eq(nil)
+        expect(result.title).to eq(nil)
+
+      end
+    end
+  end
 end
