@@ -1,5 +1,4 @@
 class Photo
-
   attr_reader :title,
               :id,
               :url,
@@ -8,7 +7,7 @@ class Photo
               :profile,
               :source
 
-  def initialize(data)
+  def initialize(data = Hash.new)
     @id = "null"
     @title = data[:title]
     @url = data[:url]
@@ -17,5 +16,4 @@ class Photo
     @profile = data[:profile]
     @source = data[:source]
   end
-
 end

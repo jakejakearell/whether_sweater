@@ -44,6 +44,8 @@ RSpec.describe "Sessions request spec" do
   end
   describe 'Sad Paths' do
     it "will give a non-descriptive error if passwords don't match" do
+      User.create({email: 'jake@ihopethiswork.org',
+         password: 'h1tech'})
       body = {
                 email: 'jake@ihopethiswork.org',
                 password: 'iamthehackman'
@@ -88,7 +90,7 @@ RSpec.describe "Sessions request spec" do
     it "will give a non-descriptive error if email taken" do
 
       body = {
-                 email: 'Fake@ihopethiswork.org',
+                 email: 'jake@ihopethiswork.org',
                  password: 'h1tech'
                }
 

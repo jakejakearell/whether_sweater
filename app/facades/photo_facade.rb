@@ -9,11 +9,16 @@ class PhotoFacade
     @service_call[:photos][:photo].first[:id]
   end
 
+  def location
+    photo_location = PhotoService.photo_lookup(photo_id)[:photo][:location]
+    "#{photo_location[:region][:_content]}, #{photo_location[:locality][:_content]}"
+  end
+
   def parsed_down_service_call
     photo_service = PhotoService.photo_lookup(photo_id)
     {
       url: photo_service[:photo][:urls][:url].first[:_content],
-      location: @location,
+      location: location,
       source: "flickr.com",
       photographer: photo_service[:photo][:owner][:username],
       profile: "https://www.flickr.com/photos/#{photo_service[:photo][:owner][:nsid]}",

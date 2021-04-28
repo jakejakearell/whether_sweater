@@ -42,15 +42,38 @@ describe "Photo Facade" do
       VCR.use_cassette("photo_id_facade") do
         id = @photo_facade_instance.photo_id
         expect(id).to be_a(String)
-        expect(id).to eq("51137658107")
+        expect(id).to eq("51144796785")
       end
     end
   end
+
   describe "Sad paths do" do
-    xit "will return an error if an invalid location is used" do
+    before :each do
+      VCR.use_cassette("photo_facade_instance_sad") do
+        @photo_facade_instance = PhotoFacade.new(nil)
+      end
     end
 
-    xit "will return an empty object if there are no " do
-    end
+    it "will return photos around the Prime Meridian if nil is sent" do
+      VCR.use_cassette("parsed_down_service_call_photo_sad") do
+        parsed = @photo_facade_instance.parsed_down_service_call
+        expect(parsed).to be_a(Hash)
+
+        expect(parsed.keys.count).to eq(6)
+
+        expect(parsed).to have_key(:url)
+        expect(parsed[:url]).to be_a(String)
+        expect(parsed).to have_key(:location)
+        expect(parsed[:location]).to be_a(String)
+        expect(parsed).to have_key(:source)
+        expect(parsed[:source]).to be_a(String)
+        expect(parsed).to have_key(:photographer)
+        expect(parsed[:photographer]).to be_a(String)
+        expect(parsed).to have_key(:profile)
+        expect(parsed[:profile]).to be_a(String)
+        expect(parsed).to have_key(:title)
+        expect(parsed[:title]).to be_a(String)
+      end
+    end 
   end
 end

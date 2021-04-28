@@ -4,7 +4,7 @@ class Api::V1::UsersController < ApplicationController
     if password_mismatch
       render json: {error: "Passwords must match",status: 404}, status: 404
     elsif user.save
-      user.update(:api_key => SecureRandom.hex)
+      user.update(:api_key => SecureRandom.hex, :email => user.email.downcase)
       render json:UserSerializer.new(user), status: 201
     else
       render json: {error: "#{user.errors.full_messages.first}",status: 404}, status: 404
@@ -12,8 +12,7 @@ class Api::V1::UsersController < ApplicationController
   end
 
   def user_params
-    {email: params[:email].downcase, password: params[:password]}
-
+    params.permit(:email, :password)
   end
 
   def password_mismatch

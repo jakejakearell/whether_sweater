@@ -12,4 +12,16 @@ RSpec.describe GeocodedObject do
       end
     end
   end
+
+  describe 'sad path' do
+    it 'will create a poro when not given an argument' do
+      VCR.use_cassette("geocode_poro_sad_path") do
+        result = GeocodedObject.new()
+
+        expect(result).to be_a(GeocodedObject)
+        expect(result.latitude).to eq(nil)
+        expect(result.longitude).to eq(nil)
+      end
+    end
+  end
 end
