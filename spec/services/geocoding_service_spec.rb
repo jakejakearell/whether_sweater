@@ -89,5 +89,21 @@ RSpec.describe 'Geocoding Service' do
       end
     end
 
+    it 'will will have an error when params are gibberish' do
+      VCR.use_cassette('gibberish_road_trip_service') do
+        destination = "asdfasdfasdf"
+        service = GeocodingService.road_trip(destination)
+        expect(service).to be_a(Hash)
+        expect(service).to have_key(:info)
+        expect(service[:info]).to have_key(:messages)
+        expect(service[:info][:messages]).to be_a(Array)
+        expect(service[:info][:messages].first).to eq("At least two locations must be provided.")
+        expect(service).to have_key(:route)
+        expect(service[:route]).to be_a(Hash)
+        expect(service[:route]).to have_key(:routeError)
+        expect(service[:route][:routeError]).to have_key(:errorCode)
+        expect(service[:route][:routeError][:errorCode]).to eq(211)
+      end
+    end
   end
 end

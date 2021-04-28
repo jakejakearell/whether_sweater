@@ -39,8 +39,28 @@ RSpec.describe 'Photo Service' do
   end
 
   describe 'Sad Paths' do
-    xit 'will still return lat and long with a non-standard request' do
-      VCR.use_cassette('geocoding_service_test_sad_paths') do
+    it 'can handle non string search' do
+      VCR.use_cassette('photo_service_test_sad_paths') do
+        service = PhotoService.photo_location_lat_lon_search(1234)
+
+        expect(service).to be_a(Hash)
+        expect(service).to have_key(:photos)
+        expect(service[:photos]).to have_key(:photo)
+        expect(service[:photos][:photo]).to be_a(Array)
+        expect(service[:photos][:photo].first).to have_key(:id)
+        expect(service[:photos][:photo].first[:id]).to be_a(String)
+      end
+    end
+
+    it 'can handle nil search' do
+      VCR.use_cassette('photo_service_test_sad_paths_nil') do
+        service = PhotoService.photo_location_lat_lon_search(nil)
+
+        expect(service).to be_a(Hash)
+        expect(service).to have_key(:photos)
+        expect(service[:photos]).to have_key(:photo)
+        expect(service[:photos][:photo]).to be_a(Array)
+        expect(service[:photos][:photo].count).to eq(0)
       end
     end
   end
