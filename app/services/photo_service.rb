@@ -1,4 +1,4 @@
-class PhotoService
+class PhotoService < ApplicationService
 
   def self.photo_location_lat_lon_search(location)
     location = GeocodingFacade.new(location).latitude_longitude
@@ -21,10 +21,6 @@ class PhotoService
   end
 
   private
-
-  def self.parser(body)
-    JSON.parse(body, symbolize_names: true)
-  end
 
   def self.conn
     Faraday.new('https://api.flickr.com') do |request|

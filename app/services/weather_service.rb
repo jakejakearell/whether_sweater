@@ -1,4 +1,4 @@
-class WeatherService
+class WeatherService < ApplicationService
   def self.current_forecast(location)
     location = GeocodingFacade.new(location).latitude_longitude
     response = conn.get("data/2.5/onecall") do |request|
@@ -10,11 +10,17 @@ class WeatherService
     WeatherService.parser(response.body)
   end
 
-  private
-
-  def self.parser(body)
-    JSON.parse(body, symbolize_names: true)
+  def self.hourly(location)
+    response = conn.get("data/2.5/onecall") do |request|
+      request.params['lat'] = location[:latitude]
+      request.params['lon'] = location[:longitude]
+      request.params['exclude'] =  "minutely,daily,alerts"
+      request.params['units'] =  "imperial"
+    end
+    WeatherService.parser(response.body)
   end
+
+  private
 
   def self.conn
     Faraday.new('https://api.openweathermap.org/') do |request|

@@ -1,4 +1,4 @@
-class GeocodingService
+class GeocodingService < ApplicationService
   def self.address_cordinates(location)
     response = conn.get("geocoding/v1/address?location=#{location}")
     GeocodingService.parser(response.body)
@@ -13,10 +13,6 @@ class GeocodingService
   end
 
   private
-
-  def self.parser(body)
-    JSON.parse(body, symbolize_names: true)
-  end
 
   def self.conn
     Faraday.new('http://www.mapquestapi.com/') do |request|
