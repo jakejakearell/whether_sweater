@@ -6,5 +6,4 @@ class GeocodedObject
     @latitude = data[:latitude]
     @longitude = data[:longitude]
   end
-
 end

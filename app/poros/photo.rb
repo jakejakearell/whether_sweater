@@ -1,5 +1,4 @@
 class Photo
-
   attr_reader :title,
               :id,
               :url,
@@ -17,5 +16,4 @@ class Photo
     @profile = data[:profile]
     @source = data[:source]
   end
-
 end
