@@ -49,15 +49,31 @@ describe "Photo Facade" do
 
   describe "Sad paths do" do
     before :each do
-      VCR.use_cassette("photo_facade_instance") do
+      VCR.use_cassette("photo_facade_instance_sad") do
         @photo_facade_instance = PhotoFacade.new(nil)
       end
     end
-    it "will return an error if an invalid location is used" do
-      require "pry"; binding.pry
-    end
 
-    it "will return an empty object if there are no " do
-    end
+    it "will return photos around the Prime Meridian if nil is sent" do
+      VCR.use_cassette("parsed_down_service_call_photo_sad") do
+        parsed = @photo_facade_instance.parsed_down_service_call
+        expect(parsed).to be_a(Hash)
+
+        expect(parsed.keys.count).to eq(6)
+
+        expect(parsed).to have_key(:url)
+        expect(parsed[:url]).to be_a(String)
+        expect(parsed).to have_key(:location)
+        expect(parsed[:location]).to be_a(String)
+        expect(parsed).to have_key(:source)
+        expect(parsed[:source]).to be_a(String)
+        expect(parsed).to have_key(:photographer)
+        expect(parsed[:photographer]).to be_a(String)
+        expect(parsed).to have_key(:profile)
+        expect(parsed[:profile]).to be_a(String)
+        expect(parsed).to have_key(:title)
+        expect(parsed[:title]).to be_a(String)
+      end
+    end 
   end
 end
