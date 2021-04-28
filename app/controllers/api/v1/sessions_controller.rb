@@ -4,8 +4,6 @@ class Api::V1::SessionsController < ApplicationController
       user = User.find_by(email: email)
       if user.authenticate(password)
         render json: UserSerializer.new(user), status: 200
-      else
-        render json: {error: "Request Bad",status: 404}, status: 404
       end
     else
       render json: {error: "Request Bad",status: 404}, status: 404
