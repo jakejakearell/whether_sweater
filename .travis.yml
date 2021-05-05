@@ -1,0 +1,17 @@
+language: ruby
+rbenv:
+- 2.5.3
+addons:
+  postgresql: 9.6
+before_install:
+- gem install bundler:2.1.4
+- nvm install --lts
+script:
+- bundle exec rails db:{create,migrate} RAILS_ENV=test
+- bundle exec rspec
+deploy:
+  provider: heroku
+  api_key:
+    secure: oGo7WceaKl8v0Fl+YPE6HMHBrw1Ocyh++jaY+V4zUkZt2I74Q+O6NHNoajdqp8HE8G9lOqcBxQ5Jfb0HcpQ8XWc+5HBpHRI+mKkwc8BXGMjaCnNc2+Fut8jswJdqmAUU+elLX1i9yccRqANtODMO2c0Kw2el7Tt6ugacfHTy2m/jU48mFJ6SGyN7OvdkZodgqpzVC7gUvnfQ3FAvm5jycN2RwW23hsgwtaqHMhziS3aBsY3ld8rl0NO0xmdFDRvR/+lzpUNRefzTK1Ly1HsdPdLnK64kQ8YsiOVhgjxN2+QJLIn9a6AO5I9D0OIXDIaDSFpTi9vN/l0SOFwolro629HzPxIF2uc4HZKpVNFMHSZUxA1yHMVNrR7dRgcm+h1NNLrPlJN9YSClymufSMajV4ZfttRWVaGP8Eg0BHY8c7yJFnLC+qgWgxyB5hkeOxTZYFR0UZKlz9aaP2+v8j+cGdbqGrA5pG4qhlXvbvaaiiYbb6F0W6ER/OZyjsy8lMLgwUMKfOQAgVo+WnWSJNw8Q24LABRJUlWAyQzpQvmw3tjx1UHI521xUzO+JLhz03sPEHnTana9BkIAkEHZXdLk5zdEmSAx4JG0dLIKhHR/NWOEq4WRp5wrvfAYUC1IK1SSMIvo4UoNVTk3JxzOo17ngIDAZRvIdAwAEz+mm086hoo=
+  app: road-trip-restful-api-rails
+  run: rails db:migrate
