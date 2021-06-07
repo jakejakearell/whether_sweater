@@ -20,7 +20,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 28 Apr 2021 13:35:06 GMT
+      - Mon, 07 Jun 2021 15:59:04 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -28,11 +28,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=B80E36DD8F2F7301262ABE0BAE4680B2; Path=/directions; HttpOnly
+      - JSESSIONID=7C44FD8BC29CB5A93677C7EF20D2729E; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Wed, 28 Apr 2021 13:35:06 GMT
+      - Mon, 07 Jun 2021 15:59:04 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -49,7 +49,7 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Wed, 28 Apr 2021 13:35:06 GMT
+  recorded_at: Mon, 07 Jun 2021 15:59:04 GMT
 - request:
     method: get
     uri: http://www.mapquestapi.com/directions/v2/route?from=Denver,CO&key=Geocode
@@ -70,7 +70,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 28 Apr 2021 13:35:06 GMT
+      - Mon, 07 Jun 2021 15:59:04 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -78,11 +78,11 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=EE791A1DD3C32D0EFA008133B1D23A13; Path=/directions; HttpOnly
+      - JSESSIONID=FCA8A848DE32DBBA1A1531AFFA753257; Path=/directions; HttpOnly
       Expires:
       - Mon, 20 Dec 1998 01:00:00 GMT
       Last-Modified:
-      - Wed, 28 Apr 2021 13:35:06 GMT
+      - Mon, 07 Jun 2021 15:59:04 GMT
       Cache-Control:
       - no-cache, must-revalidate
       Pragma:
@@ -99,5 +99,5 @@ http_interactions:
       encoding: ASCII-8BIT
       string: !binary |-
         eyJyb3V0ZSI6eyJyb3V0ZUVycm9yIjp7ImVycm9yQ29kZSI6MiwibWVzc2FnZSI6IiJ9fSwiaW5mbyI6eyJzdGF0dXNjb2RlIjo0MDIsImNvcHlyaWdodCI6eyJpbWFnZUFsdFRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIiwiaW1hZ2VVcmwiOiJodHRwOi8vYXBpLm1xY2RuLmNvbS9yZXMvbXFsb2dvLmdpZiIsInRleHQiOiLCqSAyMDIxIE1hcFF1ZXN0LCBJbmMuIn0sIm1lc3NhZ2VzIjpbIldlIGFyZSB1bmFibGUgdG8gcm91dGUgd2l0aCB0aGUgZ2l2ZW4gbG9jYXRpb25zLiJdfX0=
-  recorded_at: Wed, 28 Apr 2021 13:35:06 GMT
+  recorded_at: Mon, 07 Jun 2021 15:59:04 GMT
 recorded_with: VCR 6.0.0

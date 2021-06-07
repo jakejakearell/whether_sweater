@@ -19,10 +19,10 @@
 ### Forecast: retrieves weather for a city
 Returns location info and current weather, as well as forecast info for the upcoming 8 hours and upcoming 5 days.
 
-Request: `GET localhost:3000/api/v1/forecast?location=<city,state>`  
+Request: `GET https://road-trip-restful-api-rails.herokuapp.com/api/v1/forecast?location=<city,state>`  
 
 #### Example:
-Request: `GET localhost:3000/api/v1/forecast?location=denver,co`  
+Request: `GET https://road-trip-restful-api-rails.herokuapp.com/api/v1/forecast?location=denver,co`  
 Response body:
 ```
 {
@@ -156,10 +156,10 @@ Response body:
 ### Backgrounds: retrieves background image for a city's forecast show page
 Returns location parameter, image url, and image credit info.
 
-Request: `GET localhost:3000/api/v1/backgrounds?location=<city,state>`  
+Request: `GET https://road-trip-restful-api-rails.herokuapp.com/api/v1/backgrounds?location=<city,state>`  
 
 #### Example:
-Request: `GET localhost:3000/api/v1/backgrounds?location=denver,co`  
+Request: `GET https://road-trip-restful-api-rails.herokuapp.com/api/v1/backgrounds?location=denver,co`  
 Response body:
 ```
 {
@@ -181,12 +181,12 @@ Response body:
 ### User registration
 Returns new user's id, email, and api key.
 
-Request: `POST localhost:3000/api/v1/users` 
+Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/users`
 * body must include `email`, `password`, and `password_confirmation` params
 * you will receive a 400 bad request error if an email is already in use, if there are any missing fields, and/or if the password fields do not match
 
 #### Example:
-Request: `POST localhost:3000/api/v1/users`  
+Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/users`  
 Request body:
 ```
 {"email": "whatever123@example.com",
@@ -210,12 +210,12 @@ Response body:
 ### User login: logs in with a user's credentials
 Returns authorized user's id, email, and api key.
 
-Request: `POST localhost:3000/api/v1/sessions` 
+Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/sessions`
 * body must include `email` and `password` params
 * you will receive a 401 unauthorized error if bad credentials are submitted
 
 #### Example:
-Request: `POST localhost:3000/api/v1/sessions`  
+Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/sessions`  
 Request body:
 ```
 {"email": "whatever@example.com",
@@ -238,12 +238,12 @@ Response body:
 ### Road trip: allows user to plan a road trip
 Returns road trip info: origin, destination, travel time, forecast temperature, forecast description, and user that road trip was created by
 
-Request: `POST localhost:3000/api/v1/road_trip` 
+Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/road_trip`
 * body must include `origin`, `destination`, and `api_key` params
 * you will receive a 401 unauthorized error if bad credentials are submitted
 
 #### Example:
-Request: `POST localhost:3000/api/v1/road_trip`  
+Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/road_trip`  
 Request body:
 ```
 {"origin": "Salt Lake City, UT",
@@ -282,7 +282,7 @@ Tea Time is written in Ruby with Ruby on Rails and uses a postgresql database.
 * FastJSON
 
 **Testing**
-* SimpleCov 
+* SimpleCov
 * RSpec
 * WebMock
 * VCR
