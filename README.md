@@ -31,7 +31,7 @@ The tests are all built using the [RSpec](https://rspec.info/) and [Capybara](ht
 
 - run the test suite: `bundle exec rspec`
 
-##Endpoints
+## Endpoints
 
 ### Forecast: retrieves weather for a city
 Returns location info and current weather, as well as forecast info for the upcoming 8 hours and upcoming 5 days.
