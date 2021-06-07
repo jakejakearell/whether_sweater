@@ -19,7 +19,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Wed, 28 Apr 2021 13:34:42 GMT
+      - Mon, 07 Jun 2021 15:58:44 GMT
       Content-Type:
       - application/json;charset=UTF-8
       Content-Length:
@@ -35,7 +35,7 @@ http_interactions:
       Geocodetransactioncount:
       - '0'
       Last-Modified:
-      - Wed, 28 Apr 2021 13:34:42 GMT
+      - Mon, 07 Jun 2021 15:58:44 GMT
       Pragma:
       - no-cache
       Reversegeocodetransactioncount:
@@ -43,7 +43,7 @@ http_interactions:
       Server:
       - Apache-Coyote/1.1
       Set-Cookie:
-      - JSESSIONID=E2CFB7316674F7159C64FE639AC104D5; Path=/; HttpOnly
+      - JSESSIONID=8968954AFCBA98A9EF9499C5C980F1D9; Path=/; HttpOnly
       Status:
       - success
       Transactionweight:
@@ -54,5 +54,5 @@ http_interactions:
         Inc.","imageUrl":"http://api.mqcdn.com/res/mqlogo.gif","imageAltText":"\u00A9
         2021 MapQuest, Inc."},"messages":["Illegal argument from request: Insufficient
         info for location"]},"options":{"maxResults":-1,"thumbMaps":true,"ignoreLatLngInput":false},"results":[{"providedLocation":{"location":""},"locations":[]}]}'
-  recorded_at: Wed, 28 Apr 2021 13:34:42 GMT
+  recorded_at: Mon, 07 Jun 2021 15:58:44 GMT
 recorded_with: VCR 6.0.0

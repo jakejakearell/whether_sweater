@@ -8,12 +8,12 @@ RSpec.describe Photo do
 
         expect(result).to be_a(Photo)
         expect(result.id).to eq("null")
-        expect(result.url).to eq("https://www.flickr.com/photos/john_crisanti_photography/51086607992/")
-        expect(result.location).to eq("Colorado, Highland")
+        expect(result.url).to eq("https://www.flickr.com/photos/thelightningman/51171643872/")
+        expect(result.location).to eq("Colorado, Kirkland")
         expect(result.source).to eq("flickr.com")
-        expect(result.photographer).to eq("Colorado & Southern")
-        expect(result.profile).to eq("https://www.flickr.com/photos/61254866@N07")
-        expect(result.title).to eq("Still Going Strong")
+        expect(result.photographer).to eq("Striking Photography by Bo Insogna")
+        expect(result.profile).to eq("https://www.flickr.com/photos/48896557@N00")
+        expect(result.title).to eq("Colorado Rocky Mountain Front Range Panoramic")
 
       end
     end
