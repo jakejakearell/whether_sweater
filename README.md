@@ -10,11 +10,28 @@
 * rails 5.2
 
 1. `git clone git@github.com:jakejakearell/whether_sweater.git`
-2. `cd tea_time`
+2. `cd whether_sweater`
 3. `bundle install`
 4. `rails db:{create,migrate}`
-5. run `rails s` and explore the endpoints below!
-6. run the test suite: `bundle exec rspec`
+5. `figaro install` (this will generate a gitignored `config/application.yml` file)
+6. obtain API keys from the following services:
+    * [MapQuest](https://developer.mapquest.com/plan_purchase/steps/business_edition/business_edition_free/register)
+    * [OpenWeather](https://openweathermap.org/appid)
+    * [Flickr](https://www.flickr.com/services/api/misc.api_keys.html)
+7. add the API keys you obtained to `application.yml`:
+    ```
+    geocode_key: <your mapquest key>
+    weather_key: <your openweather key>
+    photo_key: <your flickr key>
+    ```
+8. run `rails s` and explore the endpoints below!
+
+## Running the test suite
+The tests are all built using the [RSpec](https://rspec.info/) and [Capybara](https://github.com/teamcapybara/capybara) test suites.
+
+- run the test suite: `bundle exec rspec`
+
+##Endpoints
 
 ### Forecast: retrieves weather for a city
 Returns location info and current weather, as well as forecast info for the upcoming 8 hours and upcoming 5 days.
@@ -189,9 +206,11 @@ Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/users`
 Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/users`  
 Request body:
 ```
-{"email": "whatever123@example.com",
-  "password": "password",
-   "password_confirmation": "password"}
+{
+  "email": "riley@beth.com",
+  "password": "123",
+  "password_confirmation": "123"
+}
 ```
 Response body:
 ```
@@ -218,8 +237,10 @@ Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/sessions
 Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/sessions`  
 Request body:
 ```
-{"email": "whatever@example.com",
-  "password": "password"}
+{
+  "email": "riley@beth.com",
+  "password": "123"
+}
 ```
 Response body:
 ```
@@ -246,9 +267,12 @@ Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/road_tri
 Request: `POST https://road-trip-restful-api-rails.herokuapp.com/api/v1/road_trip`  
 Request body:
 ```
-{"origin": "Salt Lake City, UT",
-   "destination": "Denver, CO",
-   "api_key": "9167e13a-9fb2-49c9-8165-c64c2ff335b1"}
+{
+  "origin": "Denver, CO",
+  "destination": "Spokane, WA",
+  "api_key": "f0aebd0c4f42862b858b29ba08d801d1"
+}
+
 ```
 Response body:
 ```
@@ -257,19 +281,19 @@ Response body:
         "id": "null",
         "type": "road_trip",
         "attributes": {
-            "start_city": "salt lake city, UT",
-            "end_city": "denver, CO",
-            "travel_time": "07 hours, 19 minutes",
+            "start_city": "Denver, CO",
+            "end_city": "Spokane, WA",
+            "travel_time": "14:39:18",
             "weather_at_eta": {
-                "temperature": 38.61,
-                "conditions": "moderate rain"
+                "temperature": 63.99,
+                "conditions": "scattered clouds"
             }
         }
     }
 }
 ```
 ## Tools
-Tea Time is written in Ruby with Ruby on Rails and uses a postgresql database.
+Weather Sweater is written in Ruby with Ruby on Rails and uses a PostgreSQL database.
 
 **Language and Framework Versions**
 * ruby 2.5.3
@@ -290,5 +314,10 @@ Tea Time is written in Ruby with Ruby on Rails and uses a postgresql database.
 * FactoryBot
 
 **Third Party APIs
-* Tea API
-   * [Teas API - GET route](https://tea-api-vic-lo.herokuapp.com/)
+* MapQuest
+   * [Directions API - GET route](https://developer.mapquest.com/documentation/directions-api/route/get/)
+   * [GeoCoding API - GET geocode address](https://developer.mapquest.com/documentation/geocoding-api/address/get/)
+* OpenWeather
+   * [OneCall API - GET forecast by coordinates](https://openweathermap.org/api/one-call-api)
+* Flickr
+   * [Image search API - GET image](https://www.flickr.com/services/api/)
