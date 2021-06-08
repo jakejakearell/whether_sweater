@@ -313,7 +313,7 @@ Weather Sweater is written in Ruby with Ruby on Rails and uses a PostgreSQL data
 * ShouldaMatchers
 * FactoryBot
 
-**Third Party APIs
+** Third Party APIs
 * MapQuest
    * [Directions API - GET route](https://developer.mapquest.com/documentation/directions-api/route/get/)
    * [GeoCoding API - GET geocode address](https://developer.mapquest.com/documentation/geocoding-api/address/get/)
