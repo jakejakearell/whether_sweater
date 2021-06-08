@@ -2,7 +2,7 @@
 
 ## About
 
-*A RESTful API built to serve roadtrippers with endpoints returning JSON info relevant for trips like destination weather and photos
+* A RESTful API built to serve roadtrippers with endpoints returning JSON info relevant for trips like destination weather and photos
 
 ## Local Setup
 **Version Requirements**
